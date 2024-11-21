@@ -1,0 +1,22 @@
+
+.big-admin-container {
+    height: 600px;
+    width: 95%;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    backdrop-filter: blur(15px); 
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.497); 
+    border: 1.5px solid rgba(255, 255, 255, 0.281); 
+}
+
+.small-admin-container {
+    height: 530px;
+    width: 95%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: #FAF7F0;
+}

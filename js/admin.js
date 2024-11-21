@@ -24,3 +24,38 @@ function displayProducts() {
             </tr>
     `).join(""))
 }
+
+
+//save new product
+
+const nameInput = document.getElementById("name");
+const priceInput = document.getElementById("price");
+const imageUrlInput = document.getElementById("image-url");
+const categoryInput = document.getElementById("category");
+const detailsInput = document.getElementById("details");
+const saveProductBtn = document.getElementById("save-btn");
+
+saveProductBtn.addEventListener("click", saveProduct);
+
+function saveProduct(event) {
+    event.preventDefault();
+    const product = {
+        name: nameInput.value,
+        price: Number(priceInput.value),
+        imageURL: imageUrlInput.value,
+        category: categoryInput.value,
+        details: detailsInput.value
+    };
+
+    fetch(URL, 
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        });
+
+    
+}
+
