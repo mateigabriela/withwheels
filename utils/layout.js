@@ -1,7 +1,7 @@
 export function mapProductToCard(product) {
     return `
                 <div class="card">
-                 <a href="details.html?id=${product.id}">
+                <a href="../pages/details.html?id=${product.id}">
                     <div class="card-background" style="background-image: url('${product.imageURL}');">
                     </div>
                     <div class="content">

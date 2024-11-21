@@ -87,17 +87,18 @@ body {
 
 .card-container {
     display: flex;
-    gap: 80px;
+    gap: 60px;
     width: 80%;
     justify-content: space-between;
     flex-wrap: wrap;
     height: calc(100vh - 200px);
+    justify-content: flex-start;
 }
 
 .card {
     position: relative;
     list-style: none;
-    width: 300px;
+    width: 280px;
     height: 220px;
     transition: .5 ease;
     flex-shrink: 0;
@@ -205,4 +206,3 @@ body {
 .nav-links a:hover i {
     transform: rotate(20deg); 
 }
-
