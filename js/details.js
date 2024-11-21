@@ -23,7 +23,8 @@ async function displayProductDetails() {
             <h1>${product.name}</h1>
             <p class="product-description">${product.details}</p>
             <p class="product-price"><strong>Price:</strong> $${product.price}</p>
-            // <p class="product-stock"><strong>In stock:</strong> ${product.stock}</p>
+            <p class="product-category"><strong>Category:</strong>${product.category}</p>
+            <p class="product-stock"><strong>In stock:</strong> ${product.stock}</p>
             <button class="add-to-cart-button">Add to Cart</button>
         </div>
     `;

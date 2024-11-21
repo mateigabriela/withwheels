@@ -11,3 +11,124 @@
     font-family: 'Oswald', sans-serif;
 }
 
+.container-product {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.product-details {
+   position: relative;
+   background-color: transparent;
+   width: 50%;
+   height: 600px;
+   box-shadow: 5px 5px 15px black;
+   top: 30px;
+   filter: brightness(.9) saturate(1) contrast(1);
+   border-radius: 90px;
+}
+
+.product-details img{
+    filter: brightness(.9) saturate(1) contrast(1);
+    position: relative;
+    width: 55%;
+    left: 50%; 
+    transform: translateX(-50%); 
+    top: 70px;
+    border-radius: 90px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.product-details h1 {
+    position: absolute;
+    top: 5px;
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.product-description {
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom:180px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 600px;
+    height: 30px;
+    background-color: aliceblue;
+    text-align: center;
+    border-radius: 90px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.product-price {
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom:140px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 600px;
+    height: 30px;
+    background-color: aliceblue;
+    text-align: center;
+    border-radius: 90px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.product-category {
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom:100px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 600px;
+    height: 30px;
+    background-color: aliceblue;
+    text-align: center;
+    border-radius: 90px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.product-stock {
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom:60px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 600px;
+    height: 30px;
+    background-color: aliceblue;
+    text-align: center;
+    border-radius: 90px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.add-to-cart-button {
+    height: 25px;
+    border-radius: 8px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+    padding: 0 15px;
+    text-align: center;
+    background-color: #8d0202;
+    color: white;
+    transition: all 0.3s ease;
+    width: 150px;
+    position: absolute;
+    bottom:15px;
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.product-details p:hover {
+    background-color: transparent;
+    color: white;
+}
+
+
+.add-to-cart-button:hover {
+    background-color: white;
+    color:#8d0202;
+}
