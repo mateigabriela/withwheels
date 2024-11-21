@@ -26,3 +26,4 @@ export function mapProductToAdminTableRow (product) {
             </td>
             </tr>` ;
 }
+
