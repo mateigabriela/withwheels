@@ -1,5 +1,4 @@
-
-.big-admin-container {
+.admin-container {
     height: 600px;
     width: 95%;
     position: absolute;
@@ -9,14 +8,162 @@
     backdrop-filter: blur(15px); 
     box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.497); 
     border: 1.5px solid rgba(255, 255, 255, 0.281); 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
 }
 
-.small-admin-container {
-    height: 530px;
-    width: 95%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    background-color: #FAF7F0;
+
+input[type="text"] {
+    background-color: transparent; 
+    border: none; 
+    border-bottom: 2px solid #aaa;
+    padding: 5px;
+    font-size: 16px;
+    outline: none; 
+    transition: border-bottom-color 0.3s ease-in-out; 
+    font-family: Oswald;
 }
+
+input[type="text"]:focus {
+    border-bottom-color: #000; 
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+    opacity: 0.7; 
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px 30px; 
+    align-items: center; 
+    width: 100%; 
+    
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 70px 0;
+    margin-left: 100px;
+}
+
+form button {
+    grid-column: span 2; 
+    align-self: center;
+    margin: 20px 160px 0;
+    font-size: 16px;
+    background-color:#393939;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 155px;
+    height: 25px;
+    grid-column: 2; 
+    align-self: end;
+}
+
+form button:hover {
+    background-color: #8d0202;
+}
+
+
+.table-container {
+    max-height: 250px; 
+    overflow-y: auto;
+    overflow-x: hidden; 
+    width: 80%;
+    background-color: white; 
+    margin: 15px 0;
+}
+
+table {
+    border-collapse: collapse; 
+    width: 100%; 
+}
+
+th, td {
+    text-align: center; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+}
+
+thead th {
+    position: sticky; 
+    top: 0; 
+    background-color: white; 
+    z-index: 1; 
+    border: 2px solid #ccc; 
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05); 
+}
+
+
+.edit-button {
+    height: 35px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+    padding: 0 15px;
+    text-align: center;
+    background-color: #393939;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .delete-button {
+    height: 35px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+    padding: 0 15px;
+    text-align: center;
+    background-color:  #8d0202;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+
+  @keyframes shakeX {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes shakeY {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .delete-button:hover {
+    animation: shakeX 0.5s ease;
+    background-color:  white;
+    color: #8d0202;
+  }
+
+  .edit-button:hover {
+    animation: shakeY 0.5s ease;
+    background-color:  white;
+    color: #393939;
+  }
+

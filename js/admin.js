@@ -16,10 +16,10 @@ function displayProducts() {
             <td>${product.category}</td>
             <td>${product.details}</td>
             <td>
-               <button data-productId=${product.id}>Edit<button>
+               <button class="edit-button" data-productId=${product.id}>Edit<button>
             </td>
             <td>
-               <button data-productId=${product.id}>Delete<button>
+               <button class="delete-button" data-productId=${product.id}>Delete<button>
             </td>
             </tr>
     `).join(""))
@@ -27,13 +27,15 @@ function displayProducts() {
 
 
 //save new product
-
+const form = document.getElementById("product-form");
 const nameInput = document.getElementById("name");
 const priceInput = document.getElementById("price");
 const imageUrlInput = document.getElementById("image-url");
 const categoryInput = document.getElementById("category");
 const detailsInput = document.getElementById("details");
 const saveProductBtn = document.getElementById("save-btn");
+let currentEditableProductID;
+let editMode=false;
 
 saveProductBtn.addEventListener("click", saveProduct);
 
@@ -47,6 +49,19 @@ function saveProduct(event) {
         details: detailsInput.value
     };
 
+    if(editMode) {
+        fetch(`${URL}/${currentEditableProductID}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        }).then(() => {
+            form.reset();
+            displayProducts();
+            editMode=false;
+    })
+    } else {
     fetch(URL, 
         {
             method: 'POST',
@@ -54,8 +69,31 @@ function saveProduct(event) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(product)
-        });
-
+        }).then(()=> displayProducts());
+    }
     
 }
 
+productsTableBody.addEventListener("click", handleActions);
+
+function handleActions(event) {
+    if(event.target.classList.contains("edit-button")) {
+        currentEditableProductID = event.target.getAttribute("data-productId");
+        fetch(`${URL}/${currentEditableProductID}`)
+        .then((response) => response.json())
+        .then((product) => {
+            nameInput.value = product.name;
+            priceInput.value = product.price;
+            imageUrlInput.value = product.imageURL;
+            categoryInput.value = product.category;
+            detailsInput.value = product.details;
+        });
+        editMode=true;
+    } else if (event.target.classList.contains("delete-button")) {
+        const id = event.target.getAttribute("data-productId");
+        fetch(`${URL}/${id}`, {
+            method: 'DELETE',
+        }).then(() => displayProducts());
+    }
+    
+}
