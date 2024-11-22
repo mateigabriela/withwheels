@@ -24,7 +24,6 @@ async function displayProductDetails() {
             <p class="product-description">${product.details}</p>
             <p class="product-price"><strong>Price:</strong> $${product.price}</p>
             <p class="product-category"><strong>Category:</strong>${product.category}</p>
-            <p class="product-stock"><strong>In stock:</strong> ${product.stock}</p>
             <button class="add-to-cart-button">Add to Cart</button>
         </div>
     `;
@@ -34,12 +33,14 @@ async function displayProductDetails() {
 }
 
 function addToCart(product) {
-    // Preia coșul din localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    cart.push(product);
+    const existingProduct = cart.find(item => item.id === product.id);
+    if (existingProduct) {
+        existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
     localStorage.setItem('cart', JSON.stringify(cart));
-
     const message = document.createElement('div');
     message.className = 'cart-notification';
     message.textContent = `"${product.name}" a fost adăugat în coș!`;
@@ -49,5 +50,6 @@ function addToCart(product) {
         message.remove();
     }, 3000);
 }
+
 
 document.addEventListener('DOMContentLoaded', displayProductDetails);
