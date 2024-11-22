@@ -2,47 +2,105 @@
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
+    backdrop-filter: blur(15px); 
 }
 
 .cart-item {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;
     padding: 10px;
-    background-color: #f9f9f9;
+    background: rgba(255, 255, 255, 0.1); 
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
+.cart-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+}
+
+
 .cart-item-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+    width: 120px; 
+    height: 120px; 
+    object-fit: contain; 
     margin-right: 20px;
+    border-radius: 5px; 
+    transition: transform 0.3s ease;
+}
+
+
+.cart-item-image:hover {
+    transform: scale(1.1); 
 }
 
 .cart-item-details {
     flex: 1;
+    color: #393939;
 }
 
 .cart-item-details h3 {
     margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #393939;
 }
 
 .quantity-input {
     width: 50px;
     margin-left: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2); 
+    color: #393939;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.quantity-input:focus {
+    background: rgba(255, 255, 255, 0.5); 
+    color: black; 
 }
 
 .delete-button {
-    background-color: #ff4d4d;
+    background: #8d0202; 
     color: white;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 15px;
 }
 
 .delete-button:hover {
-    background-color: #e60000;
+    color: #8d0202;
+    background-color: transparent;
 }
+
+.cart-total {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    color: #393939;
+}
+
+
+.msg-empty-cart {
+    height: 30px;
+    font-size: 20px;
+    color: #8d0202;
+    background-color: transparent;
+    backdrop-filter: blur(15px); 
+    box-shadow: 5px 5px 15px black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
