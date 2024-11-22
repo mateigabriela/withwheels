@@ -207,3 +207,45 @@ body {
 .nav-links a:hover i {
     transform: rotate(20deg); 
 }
+
+.sort-options {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.sort-options label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #393939;
+}
+
+.sort-options select {
+    padding: 6px 13px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 2px solid #393939;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #393939;
+    transition: all 0.3s ease;
+}
+
+.sort-options select:hover, .sort-options select:focus {
+    background-color: #8d0202;
+    color: white;
+    border-color: #8d0202;
+}
+
+.sort-options select option {
+    background-color: transparent;
+    color: #393939;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sort-options select option:hover {
+    background-color: #8d0202;
+    color: white;
+}

@@ -15,7 +15,7 @@ function displayCart() {
     const cartContainer = document.querySelector('.cart-container');
 
     if (!cart.length) {
-        cartContainer.innerHTML = '<p class="msg-empty-cart">CART IS EMPTY!</p>';
+        cartContainer.innerHTML = '<p class="msg-empty-cart" >CART IS EMPTY!</p>';
         return;
     }
 
